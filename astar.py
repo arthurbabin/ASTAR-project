@@ -208,15 +208,19 @@ p=end
 clock = pygame.time.Clock()
 i=0
 while not done:
-    if i%10==0:
-        pygame.image.save(screen,"ASTAR/screenshots/screenshot"+str(i)+".jpg")
-    i+=1
+    # if i%10==0:
+    #     pygame.image.save(screen,"ASTAR/screenshots/screenshot"+str(i)+".jpg")
+    # i+=1
+
+    
     ### Main event loop
     for event in pygame.event.get():        
         handleEvent(event)
     x,y = pygame.mouse.get_pos()
+
+
     ### Compute the steps in order to find the path   
-    if ready and not pathFound and i%3==0:
+    if ready and not pathFound: #and i%3==0:
         processNextCell()
     
     if pathFound and not finished:
